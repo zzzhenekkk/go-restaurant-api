@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Places</title>
+</head>
+<body>
+<h1>List of Places</h1>
+<ul>
+    {{range .Places}}
+    <li>
+        <div><strong>Name:</strong> {{.name}}</div>
+        <div><strong>Address:</strong> {{.address}}</div>
+        <div><strong>Phone:</strong> {{.phone}}</div>
+    </li>
+    {{end}}
+</ul>
+<div>
+    {{if gt .PrevPage 0}}
+    <a href="/?page={{.PrevPage}}">Previous</a>
+    {{end}}
+    {{if lt .NextPage .LastPage}}
+    <a href="/?page={{.NextPage}}">Next</a>
+    {{end}}
+    <a href="/?page={{.LastPage}}">Last</a>
+</div>
+</body>
+</html>
